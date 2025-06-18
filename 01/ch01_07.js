@@ -9,6 +9,16 @@ const handleData = (data)=>{    //서버에서 받은 데이터를 처리하는 
     console.log("콜백에서 받은 데이터",data);
 }
 
+function greet(name) {
+  console.log(`안녕하세요, ${name}`);
+}
+
+setTimeout(greet, 2000, "민수");
+// 2초 후: "안녕하세요, 민수"
+setTimeout(() => {
+  console.log('3초 후 실행됨');
+}, 3000);
+
 
 const fetchDataPromise = () => {
     return new Promise((resolve, reject)=>{ //resolve, reject 둘다 함수 
@@ -33,7 +43,9 @@ fetchDataPromise()  //외부라이브러리들이 이런형태로 함수를 제�
         console.log("에러",error);
         
     })
-
+    .finally(() => {     // 성공이든 실패든 무조건 실행 (생략가능)
+        console.log('끝!');
+    });
 
 const getData = ()=>{
     async()=>{
@@ -61,3 +73,4 @@ greet.then(()=>{
     console.log(message);
     
 })
+

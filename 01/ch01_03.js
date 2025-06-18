@@ -60,3 +60,11 @@ const isLoggedIn = false;
 isLoggedIn && console.log("로그인 되었습니다.");
 
 
+// API에서 온 응답
+const response = { price: "10000", discount: "0.1" };
+
+// 계산 시 숫자로 변환 필요
+const price = Number(response.price);
+const discount = parseFloat(response.discount);
+
+const final = price * (1 - discount); // 9000

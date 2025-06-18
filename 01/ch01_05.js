@@ -30,6 +30,17 @@ ten(function(){
     
 });
 
+function sayHello() {
+  console.log("안녕하세요!");
+}
+
+function executeCallback(callback) {
+  callback(); // 인자로 받은 함수를 실행
+}
+
+executeCallback(sayHello); // 출력: 안녕하세요!
+
+
 setTimeout(function(){
     console.log('1초뒤에 호출');
 }, 1000);

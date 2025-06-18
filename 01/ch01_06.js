@@ -19,9 +19,12 @@ console.log(el);
 try {
     const arr = new Array(-1);
 } catch (error) {
+    //데이터 질의 하다가 예외 발생했을 때 처리
     console.log("예외 발생",e);
+
     
 }finally{
+    //데이터베이스 커넥션 닫아주기
     console.log("예외가 발생해도 이작업이 필요",e);
 }
 
